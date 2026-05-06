@@ -1,0 +1,24 @@
+name: DataForge Test
+
+on: [push]
+
+jobs:
+  dataforge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run DataForge
+        uses: anuragup/dataforge-action@v1.0.1
+        with:
+          input: data/basic.csv
+          post_summary: false
+
+      - name: Upload Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: data-quality-report
+          path: "*_report.html"
