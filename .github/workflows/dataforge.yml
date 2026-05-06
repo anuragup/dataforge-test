@@ -23,4 +23,4 @@ jobs:
         if: always()
         with:
           name: data-quality-report
-          path: "*_report.html"
+          path: "**/*_report.html"
