@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run DataForge
-        uses: anuragup/dataforge-action@v1.0.1
+        uses: anuragup/dataforge-action@v1.0.3
         with:
           input: data/basic.csv
           post_summary: false
