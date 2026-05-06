@@ -1,6 +1,8 @@
 name: DataForge Test
 
-on: [push]
+on: 
+  push:
+  workflow_dispatch:
 
 jobs:
   dataforge:
