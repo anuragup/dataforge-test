@@ -15,7 +15,7 @@ jobs:
       - name: Run DataForge
         uses: anuragup/dataforge-action@v2.0.1
         with:
-          input: data/large_messy.csv
+          input: data/messy_orders.json
           post_summary: false
 
       - name: Upload Report
