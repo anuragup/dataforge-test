@@ -15,7 +15,7 @@ jobs:
       - name: Run DataForge
         uses: anuragup/dataforge-action@v2.0.1
         with:
-          input: data/messy_orders.json
+          input: data/messy_transactions.tsv
           post_summary: false
 
       - name: Upload Report
@@ -25,7 +25,8 @@ jobs:
           name: data-quality-report
           path: "**/*_report.html"
       - name: Download Cleaned Data
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
+        if: always()
         with:
           name: cleaned-data
-          path: "**/*_clean.csv"
+          path: "**/*_clean.*"
